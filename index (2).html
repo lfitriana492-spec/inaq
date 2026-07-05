@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual Computer Keyboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <div class="brand-icon">⌨</div>
+          <div>
+            <h1>Virtual Computer Keyboard</h1>
+            <p>Keyboard virtual modern, lengkap, responsif, dan siap dipakai</p>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button id="soundToggle" class="pill-btn" type="button">Sound: ON</button>
+          <button id="themeToggle" class="pill-btn" type="button">Theme: Auto</button>
+          <button id="fullscreenBtn" class="pill-btn" type="button">Fullscreen</button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="editor-panel">
+          <div class="editor-toolbar">
+            <label class="control-group">
+              <span>Tema</span>
+              <select id="themeSelect">
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+                <option value="auto">Auto Detect</option>
+              </select>
+            </label>
+
+            <label class="control-group">
+              <span>Ukuran Keyboard</span>
+              <select id="sizeSelect">
+                <option value="small">Small</option>
+                <option value="medium" selected>Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </label>
+
+            <label class="control-group">
+              <span>Font</span>
+              <select id="fontSelect">
+                <option value="Inter">Inter</option>
+                <option value="Segoe UI">Segoe UI</option>
+                <option value="Roboto Mono">Roboto Mono</option>
+                <option value="Georgia">Georgia</option>
+              </select>
+            </label>
+
+            <label class="control-group">
+              <span>Ukuran Font</span>
+              <input id="fontSizeRange" type="range" min="14" max="24" value="18" />
+              <span id="fontSizeValue">18px</span>
+            </label>
+
+            <div class="toolbar-buttons">
+              <button id="clearBtn" type="button">Clear Text</button>
+              <button id="copyBtn" type="button">Copy</button>
+              <button id="downloadBtn" type="button">Download TXT</button>
+              <label class="file-btn">
+                Upload TXT
+                <input id="uploadInput" type="file" accept=".txt" />
+              </label>
+            </div>
+          </div>
+
+          <textarea id="editor" spellcheck="false" placeholder="Mulai ketik di sini..."></textarea>
+
+          <div class="stats">
+            <div class="stat-card"><span>Words</span><strong id="wordCount">0</strong></div>
+            <div class="stat-card"><span>Characters</span><strong id="charCount">0</strong></div>
+            <div class="stat-card"><span>Lines</span><strong id="lineCount">1</strong></div>
+            <div class="stat-card"><span>WPM</span><strong id="wpmCount">0</strong></div>
+            <div class="stat-card"><span>Timer</span><strong id="timerCount">00:00</strong></div>
+          </div>
+        </section>
+
+        <section class="keyboard-panel">
+          <div class="status-bar">
+            <div class="status-pill">Caps Lock <span id="capsState">Off</span></div>
+            <div class="status-pill">Num Lock <span id="numState">Off</span></div>
+            <div class="status-pill">Ctrl <span id="ctrlState">Off</span></div>
+            <div class="status-pill">Alt <span id="altState">Off</span></div>
+            <div class="status-pill">AltGr <span id="altGrState">Off</span></div>
+            <div class="status-pill">Win <span id="winState">Off</span></div>
+            <div class="status-pill">Shift <span id="shiftState">Off</span></div>
+          </div>
+
+          <div class="keyboard-scroll">
+            <div id="keyboard" class="keyboard" aria-label="Virtual computer keyboard"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="app-footer">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
